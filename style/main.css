@@ -46,6 +46,26 @@ h1.title {
   100% {
     top: -50px;
     opacity: 0; } }
+	
+.game-container .gaptun-says {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;}
+  .game-container .gaptun-says p {
+    position:fixed;
+    font-size: 30px;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px;
+    -webkit-animation: fade-in-out 600ms ease-in;
+    -moz-animation: fade-in-out 600ms ease-in;
+    animation: fade-in-out 600ms ease-in;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both; }
+
+
 .scores-container {
   float: right;
   text-align: right; }
@@ -674,6 +694,11 @@ hr {
 
   .tile .tile-inner {
     font-size: 35px; }
+	
+  .gaptun-says p {
+    font-size: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;}
 
   .game-message p {
     font-size: 30px !important;

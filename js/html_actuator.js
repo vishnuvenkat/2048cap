@@ -3,9 +3,28 @@ function HTMLActuator() {
   this.scoreContainer   = document.querySelector(".score-container");
   this.bestContainer    = document.querySelector(".best-container");
   this.messageContainer = document.querySelector(".game-message");
-
+  this.gaptunSays = document.querySelector(".gaptun-says")
   this.score = 0;
 }
+
+var gaptunSayings = ['eeevverything should be in our gondrol',
+'Block all entry points',
+'Especially from the delghi logayshun',
+'sandigarh',
+'moghali cricket stadium',
+'sivalik view hotel',
+'eieieiedowhatisaaay',
+'arvind kajalagarwal',
+'sandigarh railway station',
+'enna thotta current ke shock adikum',
+'ava namma kittendhu thappikave koodadhu',
+'Manippu: Tamizh la pidikatha orey varthai',
+'I will bind you and gill you',
+'I know... who are you',
+'Tell me.. Whats your demand',
+'I will come in front of you',
+'I will finish your chapter'
+]
 
 HTMLActuator.prototype.actuate = function (grid, metadata) {
   var self = this;
@@ -105,7 +124,7 @@ HTMLActuator.prototype.positionClass = function (position) {
 
 HTMLActuator.prototype.updateScore = function (score) {
   this.clearContainer(this.scoreContainer);
-
+    this.clearContainer(this.gaptunSays)
   var difference = score - this.score;
   this.score = score;
 
@@ -117,6 +136,11 @@ HTMLActuator.prototype.updateScore = function (score) {
     addition.textContent = "+" + difference;
 
     this.scoreContainer.appendChild(addition);
+	var message = gaptunSayings[Math.floor(Math.random() * gaptunSayings.length)]
+    var messageElement = document.createElement("p");
+    messageElement.textContent = message
+    messageElement.setAttribute('style', 600);
+    this.gaptunSays.appendChild(messageElement);
   }
 };
 
